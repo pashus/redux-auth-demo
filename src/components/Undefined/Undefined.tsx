@@ -1,5 +1,12 @@
-const Undefined = () => {
-  return <h1>Сосите!</h1>;
+import Page from "../Page/Page";
+import styles from "./Undefined.module.css";
+
+const UndefinedPage = () => {
+  return (
+    <Page>
+      <p className={styles.text}>Такой страницы нет!</p>
+    </Page>
+  );
 };
 
-export default Undefined;
+export default UndefinedPage;

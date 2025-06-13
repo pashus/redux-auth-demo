@@ -1,7 +1,12 @@
 body {
   box-sizing: border-box;
-  background-color: rgb(74, 160, 231);
+  background: #22c1c3;
+  background: linear-gradient(
+    79deg,
+    rgba(34, 193, 195, 1) 0%,
+    rgba(253, 187, 45, 1) 100%
+  );
   margin: 0 auto;
-  min-height: 100vh;
-  font-family: "Arial", sans-serif;
+  font-family: "Verdana", sans-serif;
+  max-width: 1920px;
 }

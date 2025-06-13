@@ -42,22 +42,22 @@ const AuthForm = () => {
   }
 
   return (
-    <div className={styles.page}>
-      <span className={styles.text}>Тестовая redux-авторизация</span>
-      <span>{isAuth ? "Авторизован" : "Не авторизован"}</span>
-
+    <div>
+      <h2 className={styles.title}>Добро пожаловать</h2>
       <form className={styles.form}>
         <input
           onChange={(e) => setEmail(e.target.value)}
           value={email}
-          type="text"
+          type="email"
           placeholder="Почта"
+          className={styles.input}
         />
         <input
           onChange={(e) => setPassword(e.target.value)}
           value={password}
-          type="text"
+          type="password"
           placeholder="Пароль"
+          className={styles.input}
         />
         <div className={styles.buttons}>
           <button className={styles.button} onClick={onRegistration}>
@@ -68,8 +68,6 @@ const AuthForm = () => {
           </button>
         </div>
       </form>
-
-      {isAuth && <button onClick={onLogout}>Выход</button>}
     </div>
   );
 };

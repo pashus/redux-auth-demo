@@ -1,13 +1,23 @@
 import { Navigate, Route, Routes } from "react-router-dom";
-import AuthForm from "./components/AuthForm/AuthForm";
-import Undefined from "./components/Undefined/Undefined";
+import LoginPage from "./components/LoginPage/LoginPage";
+import ProtectedRoute from "./components/ProtectedRoute/ProtectedRoute";
+import UsersList from "./components/UsersList/UsersList";
+import UndefinedPage from "./components/Undefined/Undefined";
 
 const App = () => {
   return (
     <Routes>
       <Route path="/" element={<Navigate to="/login" replace />} />
-      <Route path="login" element={<AuthForm />} />
-      <Route path="*" element={<Undefined />} />
+      <Route path="*" element={<UndefinedPage />} />
+      <Route path="login" element={<LoginPage />} />
+      <Route
+        path="users-list"
+        element={
+          <ProtectedRoute>
+            <UsersList />
+          </ProtectedRoute>
+        }
+      />
     </Routes>
   );
 };

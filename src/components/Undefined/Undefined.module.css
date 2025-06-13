@@ -1,0 +1,9 @@
+.text {
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  font-size: 48px;
+  font-weight: 600;
+  padding-top: 15px;
+}
