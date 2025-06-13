@@ -18,6 +18,7 @@ export interface ILoginResponse {
 export interface IAuthState {
   user: IUser | null;
   isAuth: boolean;
+  isAuthChecked: boolean;
   loading: boolean;
   error: string | null | unknown;
 }

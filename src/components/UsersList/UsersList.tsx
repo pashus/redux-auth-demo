@@ -1,5 +1,7 @@
+import LogoutButton from "../LogoutButton/LogoutButton";
+
 const UsersList = () => {
-  return 1;
+  return <LogoutButton />;
 };
 
 export default UsersList;

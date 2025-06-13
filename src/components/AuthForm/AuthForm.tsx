@@ -1,23 +1,14 @@
 import { useState } from "react";
-import {
-  useAppDispatch,
-  useAppSelector as useSelector,
-} from "../../hooks/hooks";
-import {
-  getIsAuth,
-  getLoading,
-  loginUser,
-  logout,
-  registerUser,
-} from "../../auth/authSlice";
+import { useAppDispatch, useAppSelector } from "../../hooks/hooks";
+import { getError, loginUser, registerUser } from "../../auth/authSlice";
 import styles from "./AuthForm.module.css";
 
 const AuthForm = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [valid, setValid] = useState("");
+  const error = useAppSelector(getError) as string;
   const dispatch = useAppDispatch();
-  const isLoading = useSelector(getLoading);
-  const isAuth = useSelector(getIsAuth);
 
   function onRegistration(e: React.MouseEvent<HTMLButtonElement>) {
     e.preventDefault();
@@ -25,6 +16,12 @@ const AuthForm = () => {
       email: email,
       password: password,
     };
+
+    if (!email || !password) {
+      setValid("Пожалуйста, заполните все поля.");
+      return;
+    }
+    setValid("");
     dispatch(registerUser(userData));
   }
 
@@ -34,11 +31,13 @@ const AuthForm = () => {
       email: email,
       password: password,
     };
-    dispatch(loginUser(userData));
-  }
 
-  function onLogout() {
-    dispatch(logout());
+    if (!email || !password) {
+      setValid("Пожалуйста, заполните все поля.");
+      return;
+    }
+    setValid("");
+    dispatch(loginUser(userData));
   }
 
   return (
@@ -51,6 +50,7 @@ const AuthForm = () => {
           type="email"
           placeholder="Почта"
           className={styles.input}
+          required
         />
         <input
           onChange={(e) => setPassword(e.target.value)}
@@ -58,6 +58,7 @@ const AuthForm = () => {
           type="password"
           placeholder="Пароль"
           className={styles.input}
+          required
         />
         <div className={styles.buttons}>
           <button className={styles.button} onClick={onRegistration}>
@@ -68,8 +69,9 @@ const AuthForm = () => {
           </button>
         </div>
       </form>
+      <span>{valid || error || "\u00A0"}</span>
     </div>
   );
 };
-
+//добавить риалтайм
 export default AuthForm;
