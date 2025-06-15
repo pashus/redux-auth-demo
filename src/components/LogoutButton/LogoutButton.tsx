@@ -1,6 +1,5 @@
 import { logout } from "../../auth/authSlice";
 import { useAppDispatch } from "../../hooks/hooks";
-import styles from "./LogoutButton.module.css";
 
 const LogoutButton = () => {
   const dispatch = useAppDispatch();
@@ -9,7 +8,10 @@ const LogoutButton = () => {
     dispatch(logout());
   }
   return (
-    <button className={styles.button} onClick={onLogout}>
+    <button
+      className="cursor-pointer border-2 bg-sky-400/70 text-6xl"
+      onClick={onLogout}
+    >
       Выйти
     </button>
   );
