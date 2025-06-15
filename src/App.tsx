@@ -1,8 +1,8 @@
 import { Navigate, Route, Routes } from "react-router-dom";
-import LoginPage from "./components/LoginPage/LoginPage";
+import LoginPage from "./pages/LoginPage/LoginPage";
 import ProtectedRoute from "./components/ProtectedRoute/ProtectedRoute";
-import UsersList from "./components/UsersList/UsersList";
-import UndefinedPage from "./components/Undefined/Undefined";
+import UsersList from "./pages/UsersListPage/UsersListPage";
+import UndefinedPage from "./pages/UndefinedPage/UndefinedPage";
 import { useAppDispatch } from "./hooks/hooks";
 import { useEffect } from "react";
 import { checkAuth } from "./auth/authSlice";

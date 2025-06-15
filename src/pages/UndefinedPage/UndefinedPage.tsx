@@ -1,5 +1,5 @@
 import Page from "../Page/Page";
-import styles from "./Undefined.module.css";
+import styles from "./UndefinedPage.module.css";
 
 const UndefinedPage = () => {
   return (

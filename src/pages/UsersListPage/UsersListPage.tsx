@@ -1,4 +1,4 @@
-import LogoutButton from "../LogoutButton/LogoutButton";
+import LogoutButton from "../../components/LogoutButton/LogoutButton";
 
 const UsersList = () => {
   return <LogoutButton />;

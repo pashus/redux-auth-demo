@@ -1,8 +1,8 @@
 import { useNavigate } from "react-router-dom";
 import { getIsAuth } from "../../auth/authSlice";
 import { useAppSelector } from "../../hooks/hooks";
-import AuthForm from "../AuthForm/AuthForm";
-import Header from "../Header/Header";
+import AuthForm from "../../components/AuthForm/AuthForm";
+import Header from "../../components/Header/Header";
 import Page from "../Page/Page";
 import styles from "./LoginPage.module.css";
 import { useEffect } from "react";
